@@ -1,0 +1,42 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title>
+      Tab One
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="height:85%;">
+
+    <ion-row  style="height:95%;" justify-content-center align-items-center> 
+      
+    <ion-card class="welcome-card" style="width:80%;">
+      <form [formGroup]="authForm" (ngSubmit)="onSubmit()"> 
+      <ion-card-header>
+        <ion-card-title>Application</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">logging</ion-label>
+          <ion-input formControlName="logging"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">mot de passe </ion-label>
+          <ion-input formControlName="mdp"></ion-input>
+        </ion-item>
+      </ion-card-content>
+      <ion-button expand="block" type="submit">valider</ion-button>
+      {{reponse}}
+   
+    </form>
+    </ion-card>
+   
+    </ion-row>
+
+
+    
+         
+
+       
+   
+</ion-content>

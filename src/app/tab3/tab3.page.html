@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab Three
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  
+ 
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>page météo</ion-card-subtitle>
+      <ion-card-title>Météo</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+        
+     
+      <div *ngIf="meteoVariable; else elseBlock">
+      
+       <ion-list>
+          <ion-list-header>
+            <ion-label>  votre position  :  {{ meteoVariable.name }} </ion-label>
+          </ion-list-header>
+          <ion-item>vent vitesse : {{ meteoVariable.wind.speed }}</ion-item>
+          <ion-item *ngFor="let item of meteoVariable.weather">
+            condition :
+            {{ item.main }} - {{ item.description }} - <ion-img [src]="'http://openweathermap.org/img/w/'  + item.icon + '.png'"></ion-img> 
+           </ion-item>
+           <ion-item>
+            température :  {{meteoVariable.main.temp }} farenheit - humidité : {{ meteoVariable.main.humidity }}
+           </ion-item>
+        </ion-list>
+      </div>
+      <ng-template  #elseBlock ><ion-button expand="full" fill="outline" (click)="start();">météo</ion-button></ng-template>
+      
+        
+     
+   
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>
